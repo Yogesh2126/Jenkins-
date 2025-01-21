@@ -20,7 +20,7 @@ pipeline {
 	        }
           stage ('index html') {
 	                steps {
-		               echo "hey all $(hostname)">>  /var/www/http/index.html 
+		          sh 'echo "hey all $(hostname)">>  /var/www/http/index.html' 
 	                }
 	            }
 
