@@ -8,9 +8,9 @@ pipeline {
 	 }
 
 	     stages {
-		         stage ('comple') {
+		         stage (' maven validate') {
 				     steps {
-					       sh 'mvn comiple'
+					       sh 'mvn validate'
 						}
 				    }
 				stage ('test') {
