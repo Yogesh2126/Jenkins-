@@ -3,6 +3,10 @@
 
 pipeline {
         agent any 
+
+	environment {
+		   MAVEN_HOME = '/mnt/apache-maven-3.9.9'
+		   }
 		   stages {
 		         stage ('comple') {
 				     steps {
