@@ -1,17 +1,24 @@
+
+
+
 pipeline {
-  agent any 
-     stages {
-	       stage ('install-httpd') {
+       agent{
+           label {
+                label "slave1"
+            }
+         }
+       stages {
+	       stage ('install_httpd') {
 	                steps {
 		               sh "sudo apt install apache2 -y"
 		          }
 		    }
-           stage ('start httpd') {
+           stage ('start httpd server') {
 	                steps {
 		               sh "sudo systemctl start apache2"
 		            }
 	        }
-          stage ('httpd status') {
+          stage ('status https') {
 	                steps{
 	                  sh "sudo systemctl status apache2"
 	                }
@@ -23,6 +30,5 @@ pipeline {
 	                }
 	            }
 	    }
- }
-	  
+ }	  
 	  
