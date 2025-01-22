@@ -2,12 +2,12 @@
 
 
 pipeline {
-        agent any 
+        agent any
+	 tools {
+		 maven 'Maven 3.9.9'
+	 }
 
-	environment {
-		   MAVEN_HOME = '/mnt/apache-maven-3.9.9'
-		   }
-		   stages {
+	     stages {
 		         stage ('comple') {
 				     steps {
 					       sh 'mvn comiple'
